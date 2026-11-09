@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical, thoughtful therapy for teen boys ages 13–19 and their families. Texas telehealth is available now; Elk Grove and California services are coming soon, pending licensure.">
+  <title>Therapy for Teen Boys | Kino Park, LCSW</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f3ec;
+      --paper-deep: #ece8dd;
+      --white: #fffefa;
+      --ink: #26372f;
+      --ink-soft: #526158;
+      --green: #375449;
+      --green-dark: #233c33;
+      --sage: #dfe6db;
+      --clay: #96513b;
+      --line: #d7d5ca;
+      --focus: #a34d30;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif;
+      --measure: 70rem;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+    .skip-link {
+      position: absolute; left: 1rem; top: -5rem; z-index: 20;
+      padding: .65rem 1rem; background: var(--white); color: var(--ink);
+    }
+    .skip-link:focus { top: 1rem; }
+    .shell { width: min(var(--measure), calc(100% - 3rem)); margin-inline: auto; }
+    .topbar { border-bottom: 1px solid var(--line); }
+    .topbar-inner { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: .7rem; font-weight: 700; letter-spacing: .01em; line-height: 1.15; }
+    .brand-mark { width: 2.4rem; height: 2.4rem; border: 1px solid var(--green); border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 1.35rem; color: var(--green); }
+    .brand small { display: block; font-size: .69rem; color: var(--ink-soft); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; margin-top: .25rem; }
+    .desktop-nav { display: flex; align-items: center; gap: 1.8rem; font-size: .9rem; }
+    .desktop-nav a, .mobile-nav a { text-decoration: none; }
+    .desktop-nav a:not(.button) { display: inline-flex; align-items: center; min-height: 44px; }
+    .mobile-nav a { display: flex; align-items: center; min-height: 44px; }
+    .desktop-nav a:hover, .mobile-nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: .22em; }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; min-height: 3rem;
+      padding: .75rem 1.2rem; border: 1px solid var(--green-dark); border-radius: 999px;
+      background: var(--green-dark); color: white; text-decoration: none; font-size: .92rem; font-weight: 650;
+      transition: background-color .18s ease, transform .18s ease;
+    }
+    .button:hover { background: #315244; transform: translateY(-1px); }
+    .button.secondary { color: var(--green-dark); background: transparent; }
+    .button.secondary:hover { background: var(--sage); }
+    .mobile-menu { display: none; position: relative; }
+    .mobile-menu summary { list-style: none; cursor: pointer; border: 1px solid var(--line); border-radius: 999px; padding: .55rem .9rem; font-size: .9rem; }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .mobile-nav { position: absolute; z-index: 10; right: 0; top: calc(100% + .5rem); width: min(18rem, calc(100vw - 2rem)); padding: 1rem; display: grid; gap: .8rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--white); box-shadow: 0 12px 28px #26372f18; }
+    .mobile-nav a { padding: .4rem; }
+    .eyebrow { color: var(--clay); font-size: .76rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .hero { padding: clamp(3.4rem, 7vw, 6.2rem) 0 4.2rem; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, .7fr); align-items: center; gap: clamp(2rem, 6vw, 5.5rem); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
+    h1 { max-width: 11ch; margin: .9rem 0 1.2rem; font-size: clamp(3.2rem, 6.7vw, 5.9rem); line-height: .99; }
+    .hero-copy { max-width: 39rem; color: var(--ink-soft); font-size: clamp(1.06rem, 1.5vw, 1.2rem); }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; margin: 1.7rem 0 .7rem; }
+    .microcopy { margin: 0; max-width: 39rem; color: var(--ink-soft); font-size: .86rem; }
+    .portrait-wrap { position: relative; max-width: 24rem; justify-self: end; width: 100%; aspect-ratio: 4 / 5; }
+    .portrait-wrap::before { content: ""; position: absolute; width: 68%; height: 68%; right: -1rem; top: -1rem; border: 1px solid #a85f4380; border-radius: 48% 52% 42% 58% / 45% 44% 56% 55%; }
+    .portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 24%; border-radius: 48% 48% 1.2rem 1.2rem; background: var(--sage); }
+    .portrait-caption { position: absolute; right: -1rem; bottom: 1.3rem; max-width: 12.5rem; padding: .85rem 1rem; background: var(--white); border: 1px solid var(--line); border-radius: .7rem; font-family: var(--serif); font-size: 1.05rem; line-height: 1.25; box-shadow: 0 8px 20px #26372f10; }
+    .quick-facts { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--green-dark); color: white; border-radius: .9rem; overflow: hidden; }
+    .quick-fact { padding: 1.2rem 1.4rem; border-right: 1px solid #ffffff35; }
+    .quick-fact:last-child { border-right: 0; }
+    .quick-fact strong { display: block; margin-bottom: .25rem; font-size: .77rem; letter-spacing: .1em; text-transform: uppercase; color: #d9e3d8; }
+    .quick-fact span { font-size: .94rem; }
+    section.content-section { padding: clamp(4rem, 8vw, 7rem) 0; }
+    .section-heading { max-width: 47rem; margin-bottom: 2.3rem; }
+    h2 { font-size: clamp(2.4rem, 4.6vw, 4.1rem); line-height: 1.05; margin-bottom: 1rem; }
+    .section-intro { max-width: 42rem; color: var(--ink-soft); font-size: 1.08rem; }
+    .support-section { border-top: 1px solid var(--line); }
+    .support-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .support-item { padding: 1.5rem 1.5rem 1.7rem 0; }
+    .support-item + .support-item { border-left: 1px solid var(--line); padding-left: 1.5rem; }
+    .support-item .number { color: var(--clay); font-family: var(--serif); font-size: 1.35rem; }
+    h3 { font-size: 1.17rem; line-height: 1.3; margin: .55rem 0 .45rem; }
+    .support-item p { max-width: 23rem; margin-bottom: 0; color: var(--ink-soft); }
+    .approach-section { background: var(--paper-deep); }
+    .approach-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
+    .approach-grid h2 { max-width: 10ch; }
+    .approach-body p { color: var(--ink-soft); }
+    .method-list { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+    .method-list li { border: 1px solid #aab6a9; border-radius: 999px; padding: .45rem .8rem; color: var(--green-dark); font-size: .86rem; }
+    .parents-section { background: var(--white); }
+    .parent-note { display: grid; grid-template-columns: .58fr 1fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
+    .parent-note h2 { max-width: 9ch; }
+    .parent-copy { max-width: 42rem; color: var(--ink-soft); font-size: 1.08rem; }
+    .parent-copy strong { color: var(--ink); }
+    .about-section { border-top: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr minmax(14rem, .8fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; max-width: 58rem; }
+    .about-aside { padding: 1rem 1.2rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+    .about-aside p { margin: 0; padding: .65rem 0; }
+    .about-aside p + p { border-top: 1px solid var(--line); }
+    .about-aside strong { color: var(--ink); }
+    .credential-line { color: var(--green); font-weight: 700; }
+    .about-copy { max-width: 40rem; color: var(--ink-soft); }
+    .location-section { background: var(--green-dark); color: white; }
+    .location-section .eyebrow { color: #e2b69d; }
+    .location-section .section-intro { color: #d2ddd5; }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .location-panel { border: 1px solid #ffffff4d; border-radius: .8rem; padding: 1.5rem; }
+    .location-panel h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; }
+    .status { display: inline-block; margin: .25rem 0 .7rem; padding: .28rem .65rem; border-radius: 999px; background: #ffffff1c; color: #f2e7dc; font-size: .79rem; letter-spacing: .03em; }
+    .location-panel p { color: #d2ddd5; margin-bottom: .45rem; }
+    .price-line { margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid #ffffff45; display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .price-line strong { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; }
+    .price-line span { color: #d2ddd5; font-size: .92rem; }
+    .closing { padding: 5rem 0; text-align: center; }
+    .closing h2 { max-width: 13ch; margin-inline: auto; }
+    .closing p { max-width: 38rem; margin: 0 auto 1.5rem; color: var(--ink-soft); }
+    .site-footer { padding: 1.5rem 0 2rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .83rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+    .footer-row p { margin: 0; }
+    .text-link { text-underline-offset: .2em; }
+    @media (max-width: 760px) {
+      .shell { width: min(var(--measure), calc(100% - 2rem)); }
+      .topbar-inner { min-height: 4.8rem; }
+      .desktop-nav { display: none; }
+      .mobile-menu { display: block; }
+      .hero { padding-top: 3rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+      h1 { max-width: 12ch; font-size: clamp(3.1rem, 13vw, 4.5rem); }
+      .portrait-wrap { justify-self: center; width: min(76%, 21rem); margin: .5rem auto 1rem; }
+      .portrait-caption { right: -.7rem; bottom: .8rem; }
+      .quick-facts { grid-template-columns: 1fr; }
+      .quick-fact { border-right: 0; border-bottom: 1px solid #ffffff35; padding: 1rem 1.15rem; }
+      .quick-fact:last-child { border-bottom: 0; }
+      .support-list { grid-template-columns: 1fr; }
+      .support-item, .support-item + .support-item { padding: 1.2rem 0; border-left: 0; }
+      .support-item + .support-item { border-top: 1px solid var(--line); }
+      .approach-grid, .parent-note { grid-template-columns: 1fr; gap: 1.2rem; }
+      .approach-grid h2, .parent-note h2 { max-width: 14ch; }
+      .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .location-grid { grid-template-columns: 1fr; }
+      .price-line { align-items: flex-start; flex-direction: column; gap: .25rem; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: .9rem; }
+      .brand-mark { width: 2.15rem; height: 2.15rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#home" aria-label="Kino Park Therapy home">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span>Kino Park<small>Therapy for teens & families</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#approach">Approach</a>
+        <a href="#parents">For parents</a>
+        <a href="#about">About</a>
+        <a href="#locations">Locations & fees</a>
+        <a class="button" href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Book a free parent consult</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="#approach">Approach</a>
+          <a href="#parents">For parents</a>
+          <a href="#about">About</a>
+          <a href="#locations">Locations & fees</a>
+          <a href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Book a free parent consult</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Therapy for teen boys · ages 13–19</p>
+          <h1 id="hero-title">Support for the hard parts of growing up.</h1>
+          <p class="hero-copy">When stress, shutdown, or conflict starts taking over, therapy can help your teen build practical skills and find a way forward—with parents part of the conversation, too.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Book a free parent consult</a>
+            <a class="button secondary" href="#locations">See locations & fees</a>
+          </div>
+          <p class="microcopy">The free 20-minute consult is a virtual conversation with parents. Texas sessions are available now; California services are coming soon, within 30 days, pending licensure.</p>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="https://images.squarespace-cdn.com/content/v1/694f4b456e65e732d2f0b482/ee4b2968-6fa2-4fb4-ac29-06784d2527dd/P1000361-2.jpg" alt="Kino Park, therapist" width="600" height="750">
+          <div class="portrait-caption">A steady place to start a conversation.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell">
+      <div class="quick-facts" aria-label="Practice summary">
+        <div class="quick-fact"><strong>Who</strong><span>Teen boys, ages 13–19</span></div>
+        <div class="quick-fact"><strong>Now</strong><span>Online therapy for Texas residents</span></div>
+        <div class="quick-fact"><strong>Coming soon</strong><span>Elk Grove & California, pending licensure</span></div>
+      </div>
+    </div>
+
+    <section class="content-section support-section" aria-labelledby="support-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">A practical place to begin</p>
+          <h2 id="support-title">Therapy can make room for what’s underneath—and what comes next.</h2>
+          <p class="section-intro">You don’t need a perfect explanation before reaching out. We can start with what you’re noticing and what you’d like to feel different.</p>
+        </div>
+        <div class="support-list">
+          <article class="support-item">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Stress that’s getting in the way</h3>
+            <p>Explore what’s driving worry or pressure, and practice ways to stay steadier when things feel hard.</p>
+          </article>
+          <article class="support-item">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Getting stuck or avoiding things</h3>
+            <p>Break difficult situations into manageable steps and build skills for moving toward what matters.</p>
+          </article>
+          <article class="support-item">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Big feelings and family conflict</h3>
+            <p>Make space for honest conversations and develop more useful ways to respond to strong emotions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section approach-section" id="approach" aria-labelledby="approach-title">
+      <div class="shell approach-grid">
+        <div>
+          <p class="eyebrow">My approach</p>
+          <h2 id="approach-title">Evidence-informed, personal, and practical.</h2>
+        </div>
+        <div class="approach-body">
+          <p>I draw on evidence-based therapies and adapt the work to the teen and family in front of me. Sessions can focus on understanding patterns, building coping skills, and taking small steps toward meaningful change.</p>
+          <p>My clinical work includes individual therapy, family sessions, and collaboration with parents and other providers when appropriate.</p>
+          <ul class="method-list" aria-label="Therapeutic approaches">
+            <li>CBT</li><li>ACT</li><li>Motivational Interviewing</li><li>Solution-Focused Therapy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section parents-section" id="parents" aria-labelledby="parents-title">
+      <div class="shell parent-note">
+        <div>
+          <p class="eyebrow">For parents</p>
+          <h2 id="parents-title">You can start with a conversation.</h2>
+        </div>
+        <div class="parent-copy">
+          <p><strong>Not sure whether therapy is the right next step?</strong> A free 20-minute virtual consult gives us a chance to talk about what you’re seeing, what you hope will change, and whether working together may be a fit.</p>
+          <p>Parent coaching and family sessions are part of my experience. We can discuss how to support your teen while making room for their perspective and needs.</p>
+          <a class="text-link" href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Book a free parent consult</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section about-section" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <div class="about-grid">
+          <div>
+            <p class="eyebrow">About Kino</p>
+            <h2 id="about-title">Kino Park, LCSW</h2>
+            <p class="credential-line">Licensed Clinical Social Worker in Texas · MSW</p>
+            <div class="about-copy">
+              <p>I’m a clinical social worker with outpatient and residential behavioral-health experience. My outpatient work has focused on adolescents ages 10–19 and their families, including assessment, treatment planning, safety planning, and psychotherapy.</p>
+              <p>I use approaches including CBT, ACT, motivational interviewing, and solution-focused therapy. I value a thoughtful, collaborative process that respects each teen’s voice.</p>
+            </div>
+          </div>
+          <aside class="about-aside" aria-label="Professional background">
+            <p><strong>License</strong><br>Texas LCSW, active</p>
+            <p><strong>Education</strong><br>MSW, University of Texas at San Antonio</p>
+            <p><strong>California</strong><br>Licensure pending; services planned for Elk Grove and California.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section location-section" id="locations" aria-labelledby="locations-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Where I work</p>
+          <h2 id="locations-title">Clear options, by location.</h2>
+          <p class="section-intro">Services depend on where the client is located. California availability is not open yet; the timing below is an estimate while licensure is pending.</p>
+        </div>
+        <div class="location-grid">
+          <article class="location-panel">
+            <h3>Texas</h3>
+            <span class="status">Available now</span>
+            <p>Online therapy for Texas residents.</p>
+          </article>
+          <article class="location-panel">
+            <h3>Elk Grove & California</h3>
+            <span class="status">Coming soon · within 30 days</span>
+            <p>In-person sessions in Elk Grove and online services in California are planned, pending California licensure.</p>
+          </article>
+        </div>
+        <div class="price-line">
+          <strong>$195 per session</strong>
+          <span>Superbill provided</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="shell">
+        <p class="eyebrow">A first conversation</p>
+        <h2 id="closing-title">You don’t have to figure it all out before reaching out.</h2>
+        <p>Book a free 20-minute virtual consult with a parent to talk through what you’re looking for and whether the timing and location are a fit.</p>
+        <a class="button" href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Book a free parent consult</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <p>Kino Park Therapy · Texas LCSW</p>
+      <p><a class="text-link" href="https://therapywithkino.sessionshealth.com/request" target="_blank" rel="noopener noreferrer">Consultation & scheduling</a></p>
+    </div>
+  </footer>
+</body>
+</html>
